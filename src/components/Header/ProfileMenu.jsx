@@ -4,8 +4,10 @@ import MenuItem from "@mui/material/MenuItem";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 
 export default function BasicMenu() {
+  const nav = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -14,6 +16,9 @@ export default function BasicMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleLog = () => {
+    nav('/Log');
+  }
 
   return (
     <div>
@@ -41,13 +46,14 @@ export default function BasicMenu() {
             minWidth: "200px",
             borderRadius: "1rem",
             boxShadow: "0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%)",
+            top:"0",
           },
         }}
       >
-        <MenuItem className="menu-items" onClick={handleClose}>
-          Signup
+        <MenuItem className="menu-items" onClick={handleLog}>
+          Sign Up
         </MenuItem>
-        <MenuItem onClick={handleClose} className="menu-items">
+        <MenuItem onClick={handleLog} className="menu-items">
           Login
         </MenuItem>
         <div
