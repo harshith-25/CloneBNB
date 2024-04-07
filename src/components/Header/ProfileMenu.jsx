@@ -7,7 +7,7 @@ import "./styles.css";
 import { useNavigate } from "react-router-dom";
 
 export default function BasicMenu() {
-  const nav = useNavigate()
+  const nav = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
